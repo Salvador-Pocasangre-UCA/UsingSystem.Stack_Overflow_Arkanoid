@@ -1,0 +1,10 @@
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csprojAssemblyReference.cache
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.Form1.resources
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.Properties.Resources.resources
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.GenerateResource.cache
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.CoreCompileInputs.cache
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\proyectoFinal_POO.exe.config
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\proyectoFinal_POO.exe
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\proyectoFinal_POO.pdb
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.exe
+C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.pdb
