@@ -16,5 +16,11 @@ namespace proyectoFinal_POO
         {
             InitializeComponent();
         }
+
+        private void btnPuntajes_Click(object sender, EventArgs e)
+        {
+            frmVerPuntuacion puntuacion = new frmVerPuntuacion();
+            puntuacion.Show();
+        }
     }
 }

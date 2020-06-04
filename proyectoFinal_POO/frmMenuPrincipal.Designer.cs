@@ -82,39 +82,44 @@
             // 
             // btnJugar
             // 
-            this.btnJugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnJugar.BackColor = System.Drawing.Color.Transparent;
-            this.btnJugar.Font = new System.Drawing.Font("Zorque", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnJugar.Location = new System.Drawing.Point(353, 328);
+            this.btnJugar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnJugar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnJugar.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnJugar.ForeColor = System.Drawing.Color.White;
+            this.btnJugar.Location = new System.Drawing.Point(340, 328);
             this.btnJugar.Name = "btnJugar";
-            this.btnJugar.Size = new System.Drawing.Size(304, 59);
+            this.btnJugar.Size = new System.Drawing.Size(330, 59);
             this.btnJugar.TabIndex = 1;
             this.btnJugar.Text = "JUGAR";
             this.btnJugar.UseVisualStyleBackColor = false;
             // 
             // btnPuntajes
             // 
-            this.btnPuntajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnPuntajes.Font = new System.Drawing.Font("Zorque", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPuntajes.Location = new System.Drawing.Point(353, 458);
+            this.btnPuntajes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPuntajes.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPuntajes.ForeColor = System.Drawing.Color.White;
+            this.btnPuntajes.Location = new System.Drawing.Point(340, 458);
             this.btnPuntajes.Name = "btnPuntajes";
-            this.btnPuntajes.Size = new System.Drawing.Size(304, 59);
+            this.btnPuntajes.Size = new System.Drawing.Size(330, 59);
             this.btnPuntajes.TabIndex = 2;
             this.btnPuntajes.Text = "Puntajes";
             this.btnPuntajes.UseVisualStyleBackColor = true;
+            this.btnPuntajes.Click += new System.EventHandler(this.btnPuntajes_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSalir.Font = new System.Drawing.Font("Zorque", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSalir.Location = new System.Drawing.Point(353, 588);
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalir.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(340, 588);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(304, 59);
+            this.btnSalir.Size = new System.Drawing.Size(330, 59);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +127,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1011, 723);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "frmMenuPrincipal";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

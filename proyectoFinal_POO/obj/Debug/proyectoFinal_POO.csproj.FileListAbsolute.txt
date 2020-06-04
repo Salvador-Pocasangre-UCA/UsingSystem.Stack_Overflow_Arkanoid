@@ -8,3 +8,38 @@ C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\pr
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\proyectoFinal_POO.pdb
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.exe
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.pdb
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csprojAssemblyReference.cache
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmMenuPrincipal.resources
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmVerPuntuacion.resources
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.Properties.Resources.resources
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.GenerateResource.cache
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.CoreCompileInputs.cache
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.exe
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.pdb
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\proyectoFinal_POO.exe.config
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\proyectoFinal_POO.exe
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\proyectoFinal_POO.pdb
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\Npgsql.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Buffers.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Memory.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Text.Json.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.ValueTuple.dll
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\Npgsql.pdb
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\Npgsql.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Buffers.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Memory.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Text.Json.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.ValueTuple.xml
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.CopyComplete
