@@ -11,7 +11,7 @@ namespace proyectoFinal_POO
     static class ConexionBD
     {
         private static string host = "127.0.0.1",
-            database = "ProyectoFinalPOO",
+            database = "Arkanoid",
             userId = "postgres",
             password = "SOYunpoca1098";
         //public static string CadenaConexion = 
