@@ -13,7 +13,7 @@ namespace proyectoFinal_POO
         private static string host = "127.0.0.1",
             database = "Arkanoid",
             userId = "postgres",
-            password = "SOYunpoca1098";
+            password = "xxxxxx";
         //public static string CadenaConexion = 
         //    "Server=localhost;Port=5432;User Id=postgres;Password=root;Database=bddPedidos;";
 
