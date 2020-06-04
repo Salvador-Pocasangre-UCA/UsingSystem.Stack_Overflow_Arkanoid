@@ -11,11 +11,11 @@ namespace proyectoFinal_POO
     {
         public static List<Score> getScoreList()
         {
-            string sql = "SELECT p.name, max(pu.score) score " +
-                          "FROM public.player p inner join public.score pu " +
-                          "on p.idplayer=pu.idplayer " +
-                          "group by p.name " +
-                          "order by max(pu.score) desc " +
+            string sql = "SELECT p.usuario, max(pu.puntaje) puntaje " +
+                          "FROM public.jugador p inner join public.puntaje pu " +
+                          "on p.usuario=pu.usuario " +
+                          "group by p.usuario " +
+                          "order by max(pu.puntaje) desc " +
                           "fetch first 10 rows only";
 
             var dt = ConexionBD.realizarConsulta(sql);
