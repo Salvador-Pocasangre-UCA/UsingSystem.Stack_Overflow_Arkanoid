@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnJugar = new System.Windows.Forms.Button();
@@ -82,23 +83,24 @@
             // 
             // btnJugar
             // 
+            this.btnJugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnJugar.BackColor = System.Drawing.Color.Transparent;
             this.btnJugar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnJugar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnJugar.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnJugar.ForeColor = System.Drawing.Color.White;
+            this.btnJugar.ForeColor = System.Drawing.Color.Black;
             this.btnJugar.Location = new System.Drawing.Point(340, 328);
             this.btnJugar.Name = "btnJugar";
             this.btnJugar.Size = new System.Drawing.Size(330, 59);
             this.btnJugar.TabIndex = 1;
             this.btnJugar.Text = "JUGAR";
             this.btnJugar.UseVisualStyleBackColor = false;
+            this.btnJugar.Click += new System.EventHandler(this.btnJugar_Click);
             // 
             // btnPuntajes
             // 
-            this.btnPuntajes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPuntajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnPuntajes.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPuntajes.ForeColor = System.Drawing.Color.White;
+            this.btnPuntajes.ForeColor = System.Drawing.Color.Black;
             this.btnPuntajes.Location = new System.Drawing.Point(340, 458);
             this.btnPuntajes.Name = "btnPuntajes";
             this.btnPuntajes.Size = new System.Drawing.Size(330, 59);
@@ -109,15 +111,16 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnSalir.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Location = new System.Drawing.Point(340, 588);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(330, 59);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -127,8 +130,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1011, 723);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenuPrincipal";
-            this.Text = "Form1";
+            this.Text = "ArkaNoid";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

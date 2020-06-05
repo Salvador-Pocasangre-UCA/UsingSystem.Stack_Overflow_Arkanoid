@@ -15,6 +15,9 @@ namespace proyectoFinal_POO
         public frmVerPuntuacion()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+            Height = Screen.PrimaryScreen.Bounds.Height;
+            Width = Screen.PrimaryScreen.Bounds.Width;
         }
 
         private void frmVerPuntuacion_Load(object sender, EventArgs e)
