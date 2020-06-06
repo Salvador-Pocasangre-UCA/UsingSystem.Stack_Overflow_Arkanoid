@@ -55,12 +55,13 @@ namespace proyectoFinal_POO
 
                 if (esta)
                 {
-                    Console.WriteLine("Ya existe");
+                    frmJuego juego = new frmJuego();
+                    juego.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    JugadorDAO.crearNuevo(txbUsuario.Text);
-                    MessageBox.Show("¡Bienvenido " + nombre + "!", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    JugadorDAO.crearNuevo(txbUsuario.Text);                    
                 }
             }
         }

@@ -81,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
+    <Compile Include="frmJuego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJuego.Designer.cs">
+      <DependentUpon>frmJuego.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmJugar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmJuego.resx">
+      <DependentUpon>frmJuego.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmJugar.resx">
       <DependentUpon>frmJugar.cs</DependentUpon>
     </EmbeddedResource>
