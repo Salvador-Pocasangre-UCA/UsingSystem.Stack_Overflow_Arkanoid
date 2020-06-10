@@ -106,3 +106,5 @@ C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\pro
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.exe
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.pdb
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJuego.resources
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJuego.resources
+C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJugar.resources

@@ -81,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
+    <Compile Include="CustomPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmJuego.cs">
       <SubType>Form</SubType>
     </Compile>

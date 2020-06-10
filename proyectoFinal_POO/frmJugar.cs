@@ -61,7 +61,10 @@ namespace proyectoFinal_POO
                 }
                 else
                 {
-                    JugadorDAO.crearNuevo(txbUsuario.Text);                    
+                    JugadorDAO.crearNuevo(txbUsuario.Text);
+                    frmJuego juego = new frmJuego();
+                    juego.Show();
+                    this.Hide();
                 }
             }
         }
