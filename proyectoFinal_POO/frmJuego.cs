@@ -46,13 +46,41 @@ namespace proyectoFinal_POO
                 switch (e.KeyCode)
                 {
                     case Keys.Left:
-                        pictureBox1.Left -= increment;
-                        ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                        if(pictureBox1.Left > 0)
+                        {
+                            pictureBox1.Left -= increment;
+                            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                        }                        
                         break;
                         
                     case Keys.Right:
-                        pictureBox1.Left += increment;
-                        ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                        if(pictureBox1.Right < (Width - 20))
+                        {
+                            pictureBox1.Left += increment;
+                            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                        }                            
+                        break;
+                    case Keys.Space:
+                        DatosJuego.juegoIniciado = true;
+                        break;
+                }
+            }
+            else
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Left:
+                        if (pictureBox1.Left > 0)
+                        {
+                            pictureBox1.Left -= increment;;
+                        }
+                        break;
+
+                    case Keys.Right:
+                        if (pictureBox1.Right < (Width - 20))
+                        {
+                            pictureBox1.Left += increment;               
+                        }
                         break;
                 }
             }
@@ -123,6 +151,55 @@ namespace proyectoFinal_POO
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
                     cpb[i, j].Tag = "titleTag";
                     Controls.Add(cpb[i, j]);
+                }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (!DatosJuego.juegoIniciado)
+                return;
+
+            ball.Left += DatosJuego.dirX;
+            ball.Top += DatosJuego.dirY;
+
+            rebotarPelota();
+        }
+
+        private void rebotarPelota()
+        {
+            if (ball.Bottom > Height)
+                Application.Exit();
+
+            if (ball.Left < 0 || ball.Right > Width)
+            {
+                DatosJuego.dirX = -DatosJuego.dirX;
+                return;
+            }
+
+            if (ball.Bounds.IntersectsWith(pictureBox1.Bounds))
+            {
+                DatosJuego.dirY = -DatosJuego.dirY;
+                return;
+            }
+
+            for(int i = 5; i >= 0; i--)
+            {
+                for(int j = 0; j < 10; j++)
+                {
+                    if (cpb[i,j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
+                    {
+                        cpb[i, j].golpes--;
+
+                        if(cpb[i, j].golpes == 0)
+                        {
+                            Controls.Remove(cpb[i, j]);
+                            cpb[i, j] = null;
+                        }
+
+                        DatosJuego.dirY = -DatosJuego.dirY;
+                        return;
+                    }                                 
                 }
             }
         }

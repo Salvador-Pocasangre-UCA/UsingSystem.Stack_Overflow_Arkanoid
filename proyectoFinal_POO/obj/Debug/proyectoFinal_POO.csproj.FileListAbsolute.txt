@@ -94,9 +94,7 @@ C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\pro
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.ValueTuple.xml
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csprojAssemblyReference.cache
-C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJugar.resources
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmMenuPrincipal.resources
-C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmVerPuntuacion.resources
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.Properties.Resources.resources
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.GenerateResource.cache
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.CoreCompileInputs.cache
@@ -109,3 +107,5 @@ C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\pr
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJuego.resources
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucTopJugadores.resources
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucJugadorNombre.resources
+C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucJugadorNombre.resources
+C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucTopJugadores.resources
