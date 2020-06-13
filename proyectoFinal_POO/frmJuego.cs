@@ -7,13 +7,17 @@ namespace proyectoFinal_POO
     public partial class frmJuego : Form
     {
         private CustomPB [,] cpb;
+        private PictureBox ball;
+
         private int increment;
+
         public frmJuego()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
             Height = Screen.PrimaryScreen.Bounds.Height;
             Width = Screen.PrimaryScreen.Bounds.Width;
+
             increment = 10;
         }
 
@@ -37,23 +41,48 @@ namespace proyectoFinal_POO
 
         private void frmJuego_KeyPress(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            if (!DatosJuego.juegoIniciado)
             {
-                case Keys.Left:
-                    pictureBox1.Left -= increment;
-                    break;
-                case Keys.Right:
-                    pictureBox1.Left += increment;
-                    break;
+                switch (e.KeyCode)
+                {
+                    case Keys.Left:
+                        pictureBox1.Left -= increment;
+                        ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                        break;
+                        
+                    case Keys.Right:
+                        pictureBox1.Left += increment;
+                        ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                        break;
+                }
             }
         }
 
         private void frmJuego_Load(object sender, EventArgs e)
         {
-            loasTiles();
+            // Insertando y configurando imagen de plataforma
+            pictureBox1.BackgroundImage = Image.FromFile("../../../Sprites/Player.png");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+
+            pictureBox1.Top = Height - pictureBox1.Height - 80;
+            pictureBox1.Left = (Width / 2) - (pictureBox1.Width / 2);
+
+            // Insertando y configurando imagen de pelota
+            ball = new PictureBox();
+            ball.Width = ball.Height = 20;
+            ball.BackgroundImage = Image.FromFile("../../../Sprites/Ball.png");
+            ball.BackgroundImageLayout = ImageLayout.Stretch;
+
+            ball.Top = pictureBox1.Top - ball.Height;
+            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+
+            Controls.Add(ball);
+
+            LoadTiles();
+            timer1.Start();
         }
 
-        private void loasTiles()
+        private void LoadTiles()
         {
             int xAxis = 10, yAxis = 6;
 

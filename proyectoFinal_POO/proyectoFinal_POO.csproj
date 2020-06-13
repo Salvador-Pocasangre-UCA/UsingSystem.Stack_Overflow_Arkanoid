@@ -84,6 +84,7 @@
     <Compile Include="CustomPB.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DatosJuego.cs" />
     <Compile Include="frmJuego.cs">
       <SubType>Form</SubType>
     </Compile>
