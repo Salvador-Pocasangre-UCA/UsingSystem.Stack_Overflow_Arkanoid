@@ -1,36 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace proyectoFinal_POO
 {
     public partial class frmMenuPrincipal : Form
     {
+        private ucTopJugadores A;
+        private ucJugadorNombre B;
         public frmMenuPrincipal()
         {
             InitializeComponent();
+            Height = ClientSize.Height;
+            Width = ClientSize.Width;
             WindowState = FormWindowState.Maximized;
-            Height = Screen.PrimaryScreen.Bounds.Height;
-            Width = Screen.PrimaryScreen.Bounds.Width;
+
+            A = new ucTopJugadores();
+            B = new ucJugadorNombre();
         }
 
-        private void btnPuntajes_Click(object sender, EventArgs e)
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            frmVerPuntuacion puntuacion = new frmVerPuntuacion();
-            puntuacion.ShowDialog();
+            A.Dock = DockStyle.Fill;
+            A.Width = Width;
+            A.Height = Height;
+
+            B.Dock = DockStyle.Fill;
+            B.Width = Width;
+            B.Height = Height;
+
+            Controls.Add(A);
+            A.Hide();
+
+            A.OnClickButtonA += OnclickToUserControlA;
+        }
+
+        private void OnclickToUserControlA(object sender, EventArgs e)
+        {
+            A.Hide();
+            tableLayoutPanel1.Show();
         }
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            frmJugar jugar = new frmJugar();
-            jugar.Show();
-            this.Hide();
+            tableLayoutPanel1.Hide();
+            Controls.Add(B);
+        }
+
+        private void btnPuntajes_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.Hide();
+            A.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

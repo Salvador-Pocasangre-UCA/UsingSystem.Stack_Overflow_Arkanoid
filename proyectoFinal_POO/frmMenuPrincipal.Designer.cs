@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.09091F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.09091F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1011, 723);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -84,13 +84,14 @@
             // btnJugar
             // 
             this.btnJugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnJugar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnJugar.BackColor = System.Drawing.Color.Transparent;
             this.btnJugar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnJugar.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnJugar.ForeColor = System.Drawing.Color.Black;
-            this.btnJugar.Location = new System.Drawing.Point(340, 328);
+            this.btnJugar.Location = new System.Drawing.Point(348, 328);
             this.btnJugar.Name = "btnJugar";
-            this.btnJugar.Size = new System.Drawing.Size(330, 59);
+            this.btnJugar.Size = new System.Drawing.Size(313, 59);
             this.btnJugar.TabIndex = 1;
             this.btnJugar.Text = "JUGAR";
             this.btnJugar.UseVisualStyleBackColor = false;
@@ -99,11 +100,12 @@
             // btnPuntajes
             // 
             this.btnPuntajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPuntajes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPuntajes.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPuntajes.ForeColor = System.Drawing.Color.Black;
-            this.btnPuntajes.Location = new System.Drawing.Point(340, 458);
+            this.btnPuntajes.Location = new System.Drawing.Point(348, 458);
             this.btnPuntajes.Name = "btnPuntajes";
-            this.btnPuntajes.Size = new System.Drawing.Size(330, 59);
+            this.btnPuntajes.Size = new System.Drawing.Size(313, 59);
             this.btnPuntajes.TabIndex = 2;
             this.btnPuntajes.Text = "Puntajes";
             this.btnPuntajes.UseVisualStyleBackColor = true;
@@ -112,11 +114,12 @@
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalir.Font = new System.Drawing.Font("Zorque", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(340, 588);
+            this.btnSalir.Location = new System.Drawing.Point(348, 588);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(330, 59);
+            this.btnSalir.Size = new System.Drawing.Size(313, 59);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -133,6 +136,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenuPrincipal";
             this.Text = "ArkaNoid";
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

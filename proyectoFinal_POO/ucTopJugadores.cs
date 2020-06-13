@@ -1,41 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace proyectoFinal_POO
 {
-    public partial class frmVerPuntuacion : Form
+    public partial class ucTopJugadores : UserControl
     {
-        public frmVerPuntuacion()
+        public delegate void EventUserControlA(object sender, EventArgs e);
+        public EventUserControlA OnClickButtonA;
+        public ucTopJugadores()
         {
             InitializeComponent();
-            WindowState = FormWindowState.Maximized;
-            Height = Screen.PrimaryScreen.Bounds.Height;
-            Width = Screen.PrimaryScreen.Bounds.Width;
         }
 
-        private void frmVerPuntuacion_Load(object sender, EventArgs e)
+        private void ucTopJugadores_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             string lista = "";
             string listaScore = "";
             List<Score> miLista = ScoreDAO.getScoreList();
-            foreach(var fila in miLista)
+            foreach (var fila in miLista)
             {
                 lista += fila.name;
                 lista += "\n\n";
                 listaScore += fila.score;
                 listaScore += "\n\n";
             }
-           
+
             label2.Text = lista;
             label3.Text = listaScore;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            OnClickButtonA?.Invoke(this, e);
         }
     }
 }

@@ -90,23 +90,11 @@
     <Compile Include="frmJuego.Designer.cs">
       <DependentUpon>frmJuego.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmJugar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmJugar.Designer.cs">
-      <DependentUpon>frmJugar.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmVerPuntuacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmVerPuntuacion.Designer.cs">
-      <DependentUpon>frmVerPuntuacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Jugador.cs" />
     <Compile Include="JugadorDAO.cs" />
@@ -119,17 +107,23 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
+    <Compile Include="ucJugadorNombre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucJugadorNombre.Designer.cs">
+      <DependentUpon>ucJugadorNombre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTopJugadores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTopJugadores.Designer.cs">
+      <DependentUpon>ucTopJugadores.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmJuego.resx">
       <DependentUpon>frmJuego.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmJugar.resx">
-      <DependentUpon>frmJugar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmVerPuntuacion.resx">
-      <DependentUpon>frmVerPuntuacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +135,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucJugadorNombre.resx">
+      <DependentUpon>ucJugadorNombre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTopJugadores.resx">
+      <DependentUpon>ucTopJugadores.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
