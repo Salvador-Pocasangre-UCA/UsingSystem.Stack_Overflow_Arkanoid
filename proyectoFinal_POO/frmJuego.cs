@@ -11,6 +11,9 @@ namespace proyectoFinal_POO
 
         private int increment;
 
+        private delegate void AccionesPelota();
+        private readonly AccionesPelota MovimientoPelota;
+        
         public frmJuego()
         {
             InitializeComponent();
@@ -19,6 +22,11 @@ namespace proyectoFinal_POO
             Width = Screen.PrimaryScreen.Bounds.Width;
 
             increment = 10;
+
+            MovimientoPelota = rebotarPelota;
+            MovimientoPelota += MoverPelota;
+
+
         }
 
         private void frmJuego_FormClosing(object sender, FormClosingEventArgs e)
@@ -160,16 +168,16 @@ namespace proyectoFinal_POO
             if (!DatosJuego.juegoIniciado)
                 return;
 
-            ball.Left += DatosJuego.dirX;
-            ball.Top += DatosJuego.dirY;
-
-            rebotarPelota();
+            MovimientoPelota?.Invoke();
         }
 
         private void rebotarPelota()
         {
             if (ball.Bottom > Height)
-                Application.Exit();
+            {
+                Application.Exit();                
+            }               
+                
 
             if (ball.Left < 0 || ball.Right > Width)
             {
@@ -177,7 +185,7 @@ namespace proyectoFinal_POO
                 return;
             }
 
-            if (ball.Bounds.IntersectsWith(pictureBox1.Bounds))
+            if (ball.Bounds.IntersectsWith(pictureBox1.Bounds) || ball.Top < 0)
             {
                 DatosJuego.dirY = -DatosJuego.dirY;
                 return;
@@ -202,6 +210,12 @@ namespace proyectoFinal_POO
                     }                                 
                 }
             }
+        }
+
+        private void MoverPelota()
+        {
+            ball.Left += DatosJuego.dirX;
+            ball.Top += DatosJuego.dirY;
         }
     }
 }

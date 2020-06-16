@@ -7,6 +7,7 @@ namespace proyectoFinal_POO
     {
         private ucTopJugadores A;
         private ucJugadorNombre B;
+
         public frmMenuPrincipal()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace proyectoFinal_POO
             A.Hide();
 
             A.OnClickButtonA += OnclickToUserControlA;
+
         }
 
         private void OnclickToUserControlA(object sender, EventArgs e)
