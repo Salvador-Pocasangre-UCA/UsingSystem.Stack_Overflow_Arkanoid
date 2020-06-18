@@ -260,7 +260,7 @@ namespace proyectoFinal_POO
             vidasRestantes.Text = "X" + DatosJuego.vidas.ToString();
             puntaje.Text = DatosJuego.puntaje.ToString();
 
-            vidasRestantes.Font = puntaje.Font = new Font("Zorque", 22F);
+            vidasRestantes.Font = puntaje.Font = new Font("Zorque", 25F);
             vidasRestantes.TextAlign = puntaje.TextAlign = ContentAlignment.MiddleCenter;
 
             
@@ -276,7 +276,7 @@ namespace proyectoFinal_POO
             corazon.BackgroundImage = Image.FromFile("../../../Sprites/Heart.png");
             corazon.BackgroundImageLayout = ImageLayout.Stretch;
 
-            vidasRestantes.Left = corazon.Right + 5;
+            vidasRestantes.Left = corazon.Right-10;
 
             scores.Controls.Add(corazon);
             scores.Controls.Add(vidasRestantes);
