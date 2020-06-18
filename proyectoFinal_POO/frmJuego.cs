@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace proyectoFinal_POO
@@ -9,11 +10,18 @@ namespace proyectoFinal_POO
         private CustomPB [,] cpb;
         private PictureBox ball;
 
+        private Panel scores;
+        private Label vidasRestantes, puntaje;
+
+        private PictureBox corazon;
+
         private int increment;
 
         private delegate void AccionesPelota();
         private readonly AccionesPelota MovimientoPelota;
+
         
+
         public frmJuego()
         {
             InitializeComponent();
@@ -70,6 +78,7 @@ namespace proyectoFinal_POO
                         break;
                     case Keys.Space:
                         DatosJuego.juegoIniciado = true;
+                        timer1.Start();
                         break;
                 }
             }
@@ -96,6 +105,8 @@ namespace proyectoFinal_POO
 
         private void frmJuego_Load(object sender, EventArgs e)
         {
+            PanelPuntajes();
+
             // Insertando y configurando imagen de plataforma
             pictureBox1.BackgroundImage = Image.FromFile("../../../Sprites/Player.png");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
@@ -115,7 +126,6 @@ namespace proyectoFinal_POO
             Controls.Add(ball);
 
             LoadTiles();
-            timer1.Start();
         }
 
         private void LoadTiles()
@@ -142,7 +152,7 @@ namespace proyectoFinal_POO
                     cpb[i, j].Height = pbHeight;
                     cpb[i, j].Width = pbWidth;
                     cpb[i, j].Left = j * pbWidth;
-                    cpb[i, j].Top = i * pbHeight; 
+                    cpb[i, j].Top = i * pbHeight + scores.Height + 1; 
                     if (i == 5)
                         cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - green.png");
                     if (i == 4)
@@ -168,14 +178,28 @@ namespace proyectoFinal_POO
             if (!DatosJuego.juegoIniciado)
                 return;
 
+            DatosJuego.ticksRealizados += 0.01;
             MovimientoPelota?.Invoke();
         }
 
         private void rebotarPelota()
         {
+            if (ball.Top < 0)
+                DatosJuego.dirX = -DatosJuego.dirY;
+
             if (ball.Bottom > Height)
             {
-                Application.Exit();                
+                DatosJuego.vidas--;
+                DatosJuego.juegoIniciado = false;
+                timer1.Stop();
+                reposicionarElementos();
+                actualizarElementos();
+                if(DatosJuego.vidas == 0)
+                {
+                    timer1.Stop();
+                    Application.Exit();
+                }
+                                
             }               
                 
 
@@ -197,15 +221,19 @@ namespace proyectoFinal_POO
                 {
                     if (cpb[i,j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                     {
+                        DatosJuego.puntaje += (int) (cpb[i, j].golpes * DatosJuego.ticksRealizados);
                         cpb[i, j].golpes--;
 
                         if(cpb[i, j].golpes == 0)
                         {
+                            
                             Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
+
                         }
 
                         DatosJuego.dirY = -DatosJuego.dirY;
+                        puntaje.Text = DatosJuego.puntaje.ToString();
                         return;
                     }                                 
                 }
@@ -216,6 +244,57 @@ namespace proyectoFinal_POO
         {
             ball.Left += DatosJuego.dirX;
             ball.Top += DatosJuego.dirY;
+        }
+
+        private void PanelPuntajes()
+        {
+            scores = new Panel();
+            scores.Width = Width;
+            scores.Height = (int)(Height * 0.06);
+            scores.Top = scores.Left = 0;
+            scores.BackColor = Color.Black;
+
+            vidasRestantes = new Label();
+            puntaje = new Label();
+            vidasRestantes.ForeColor = puntaje.ForeColor = Color.White;
+            vidasRestantes.Text = "X" + DatosJuego.vidas.ToString();
+            puntaje.Text = DatosJuego.puntaje.ToString();
+
+            vidasRestantes.Font = puntaje.Font = new Font("Zorque", 22F);
+            vidasRestantes.TextAlign = puntaje.TextAlign = ContentAlignment.MiddleCenter;
+
+            
+            puntaje.Left = Width - 100;
+
+            vidasRestantes.Height = puntaje.Height = scores.Height;
+            
+
+            corazon = new PictureBox();
+            corazon.Height = corazon.Width = scores.Height;
+            corazon.Top = 0;
+            corazon.Left = 20;
+            corazon.BackgroundImage = Image.FromFile("../../../Sprites/Heart.png");
+            corazon.BackgroundImageLayout = ImageLayout.Stretch;
+
+            vidasRestantes.Left = corazon.Right + 5;
+
+            scores.Controls.Add(corazon);
+            scores.Controls.Add(vidasRestantes);
+            scores.Controls.Add(puntaje);
+            Controls.Add(scores);
+        }
+
+        private void reposicionarElementos()
+        {
+            pictureBox1.Left = (Width / 2) - (pictureBox1.Width / 2);
+            ball.Top = pictureBox1.Top - ball.Height;
+            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+        }
+
+        private void actualizarElementos()
+        {
+            vidasRestantes.Text = "X" + DatosJuego.vidas.ToString();
+
         }
     }
 }
