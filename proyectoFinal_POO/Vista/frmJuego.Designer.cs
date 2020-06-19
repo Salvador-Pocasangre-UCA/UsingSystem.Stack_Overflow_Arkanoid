@@ -1,6 +1,6 @@
 ﻿namespace proyectoFinal_POO
 {
-    partial class frmJuego
+    partial class FrmGame
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGame));
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
@@ -50,7 +50,7 @@
             // timer1
             // 
             this.timer1.Interval = 40;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // frmJuego
             // 
@@ -64,10 +64,10 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmJuego";
             this.Text = "ArkaNoid";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmJuego_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmJuego_FormClosed);
-            this.Load += new System.EventHandler(this.frmJuego_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmJuego_KeyPress);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGame_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGame_FormClosed);
+            this.Load += new System.EventHandler(this.FrmGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmGame_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,6 +1,6 @@
 ﻿namespace proyectoFinal_POO
 {
-    partial class ucTopJugadores
+    partial class UcTopPlayers
     {
         /// <summary> 
         /// Required designer variable.
@@ -129,7 +129,7 @@
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // ucTopJugadores
             // 
@@ -141,7 +141,7 @@
             this.DoubleBuffered = true;
             this.Name = "ucTopJugadores";
             this.Size = new System.Drawing.Size(1032, 675);
-            this.Load += new System.EventHandler(this.ucTopJugadores_Load);
+            this.Load += new System.EventHandler(this.UcTopPlayers_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

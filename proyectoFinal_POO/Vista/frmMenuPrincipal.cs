@@ -3,20 +3,24 @@ using System.Windows.Forms;
 
 namespace proyectoFinal_POO
 {
-    public partial class frmMenuPrincipal : Form
+    public partial class FrmMainMenu : Form
     {
-        private ucTopJugadores A;
-        private ucJugadorNombre B;
+        //UserControl del juego
+        private UcTopPlayers A;
+        private UcPlayerName B;
 
-        public frmMenuPrincipal()
+        public FrmMainMenu()
         {
             InitializeComponent();
+
+            // Maximizar ventana en su creacion
             Height = ClientSize.Height;
             Width = ClientSize.Width;
             WindowState = FormWindowState.Maximized;
 
-            A = new ucTopJugadores();
-            B = new ucJugadorNombre();
+            // Instanciacion de UserControl
+            A = new UcTopPlayers();
+            B = new UcPlayerName();
         }
 
         //Metodo que arregla flickering issue
@@ -30,8 +34,9 @@ namespace proyectoFinal_POO
             }
         }
 
-        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        private void FrmMainMenu_Load(object sender, EventArgs e)
         {
+            //Preparacion de UserControl
             A.Dock = DockStyle.Fill;
             A.Width = Width;
             A.Height = Height;
@@ -56,7 +61,7 @@ namespace proyectoFinal_POO
             tableLayoutPanel1.Show();
         }
 
-        private void btnJugar_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
             tableLayoutPanel1.Hide();
             B.Show();
@@ -74,14 +79,14 @@ namespace proyectoFinal_POO
             };
         }
 
-        private void btnPuntajes_Click(object sender, EventArgs e)
+        private void BtnScores_Click(object sender, EventArgs e)
         {
             tableLayoutPanel1.Hide();
-            A.ucTopJugadores_Load(sender, e);
+            A.UcTopPlayers_Load(sender, e);
             A.Show();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Seguro que desea salir?",
                 "ArkaNoid", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

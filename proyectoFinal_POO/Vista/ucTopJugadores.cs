@@ -4,25 +4,25 @@ using System.Windows.Forms;
 
 namespace proyectoFinal_POO
 {
-    public partial class ucTopJugadores : UserControl
+    public partial class UcTopPlayers : UserControl
     {
         public delegate void EventUserControlA(object sender, EventArgs e);
         public EventUserControlA OnClickButtonA;
-        public ucTopJugadores()
+        public UcTopPlayers()
         {
             InitializeComponent();
         }
 
-        public void ucTopJugadores_Load(object sender, EventArgs e)
+        public void UcTopPlayers_Load(object sender, EventArgs e)
         {
             string lista = "";
             string listaScore = "";
-            List<Score> miLista = ScoreDAO.getScoreList();
+            List<Score> miLista = ScoreController.GetScoreList();
             foreach (var fila in miLista)
             {
-                lista += fila.name;
+                lista += fila.Name;
                 lista += "\n\n";
-                listaScore += fila.score;
+                listaScore += fila.Scores;
                 listaScore += "\n\n";
             }
 
@@ -30,7 +30,7 @@ namespace proyectoFinal_POO
             label3.Text = listaScore;
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             OnClickButtonA?.Invoke(this, e);
         }

@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace proyectoFinal_POO
 {
-    class ScoreDAO
+    class ScoreController
     {
-        public static List<Score> getScoreList()
+        public static List<Score> GetScoreList()
         {
             string sql = "SELECT p.usuario, pu.puntaje puntaje " +
                           "FROM public.jugador p inner join public.puntaje pu " +
@@ -17,28 +14,30 @@ namespace proyectoFinal_POO
                           "order by pu.puntaje desc " +
                           "fetch first 10 rows only";
 
-            var dt = ConexionBD.realizarConsulta(sql);
-            List<Score> lista = new List<Score>();
+            var dt = ConnectionDB.ExecuteQuery(sql);
+            List<Score> list = new List<Score>();
 
-            foreach (DataRow fila in dt.Rows)
+            foreach (DataRow row in dt.Rows)
             {
-                Score s = new Score();
-                s.name = fila[0].ToString();
-                s.score = Convert.ToInt32(fila[1].ToString());
-                lista.Add(s);
+                Score s = new Score
+                {
+                    Name = row[0].ToString(),
+                    Scores = Convert.ToInt32(row[1].ToString())
+                };
+                list.Add(s);
             }
 
-            return lista;
+            return list;
         }
 
-        public static void createScore(string User, int Score)
+        public static void CreateScore(string User, int Score)
         {
             string sql = String.Format(
                 "insert into puntaje(usuario, puntaje) " +
                 "values('{0}', {1});",
                 User, Score);
 
-            ConexionBD.realizarAccion(sql);
+            ConnectionDB.ExecuteNonQuery(sql);
         }
     }
 }

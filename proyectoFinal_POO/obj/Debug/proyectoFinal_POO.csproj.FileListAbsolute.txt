@@ -93,19 +93,19 @@ C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\pro
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\bin\Debug\System.ValueTuple.xml
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csprojAssemblyReference.cache
-C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmMenuPrincipal.resources
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.Properties.Resources.resources
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.GenerateResource.cache
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.csproj.CopyComplete
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.exe
 C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.pdb
-C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJuego.resources
 C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJuego.resources
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.frmJuego.resources
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucTopJugadores.resources
 C:\Users\deras\Desktop\POO\Proyecto final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucJugadorNombre.resources
-C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucJugadorNombre.resources
-C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucTopJugadores.resources
 C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucJugadorNombre.resources
 C:\Users\Familia\Desktop\ProyectoFinalPOO\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.ucTopJugadores.resources
+C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.UcTopPlayers.resources
+C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.FrmGame.resources
+C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.FrmMainMenu.resources
+C:\Users\DELL\Desktop\POO\Proyecto Final\UsingSystem.Stack_Overflow_Arkanoid\proyectoFinal_POO\obj\Debug\proyectoFinal_POO.UcPlayerName.resources
