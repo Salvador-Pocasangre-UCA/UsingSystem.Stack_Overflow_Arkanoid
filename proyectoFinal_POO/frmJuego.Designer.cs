@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
+            this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbPlayer
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(188, 353);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbPlayer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pbPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.pbPlayer.Location = new System.Drawing.Point(251, 473);
+            this.pbPlayer.Margin = new System.Windows.Forms.Padding(4);
+            this.pbPlayer.Name = "pbPlayer";
+            this.pbPlayer.Size = new System.Drawing.Size(249, 34);
+            this.pbPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPlayer.TabIndex = 0;
+            this.pbPlayer.TabStop = false;
             // 
             // timer1
             // 
@@ -52,25 +54,28 @@
             // 
             // frmJuego
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(574, 423);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(765, 521);
+            this.Controls.Add(this.pbPlayer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmJuego";
             this.Text = "ArkaNoid";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmJuego_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmJuego_FormClosed);
             this.Load += new System.EventHandler(this.frmJuego_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmJuego_KeyPress);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPlayer;
         private System.Windows.Forms.Timer timer1;
     }
 }

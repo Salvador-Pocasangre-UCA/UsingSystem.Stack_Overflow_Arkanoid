@@ -10,17 +10,18 @@ namespace proyectoFinal_POO
         private CustomPB [,] cpb;
         private PictureBox ball;
 
-        private Panel scores;
-        private Label vidasRestantes, puntaje;
+        private Panel scoresPanel;
+        private Label remainingLifes, score;
 
-        private PictureBox corazon;
+        private PictureBox heart;
 
         private int increment;
 
         private delegate void AccionesPelota();
         private readonly AccionesPelota MovimientoPelota;
+        public Action FinishGame;
 
-        
+
 
         public frmJuego()
         {
@@ -31,10 +32,47 @@ namespace proyectoFinal_POO
 
             increment = 10;
 
-            MovimientoPelota = rebotarPelota;
-            MovimientoPelota += MoverPelota;
+            MovimientoPelota = BounceBall;
+            MovimientoPelota += MoveBall;
+        }
 
+        //Metodo que arregla flickering issue
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
 
+        private void frmJuego_Load(object sender, EventArgs e)
+        {
+
+            BackgroundImage = Image.FromFile("../../../Recursos_proyectoPOO/fondo.jpg");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ScoresPanel();
+
+            // Insertando y configurando imagen de plataforma de  jugador
+            pbPlayer.BackgroundImage = Image.FromFile("../../../Recursos_proyectoPOO/Player.png");
+            pbPlayer.BackgroundImageLayout = ImageLayout.Stretch;
+
+            pbPlayer.Top = Height - pbPlayer.Height - 80;
+            pbPlayer.Left = (Width / 2) - (pbPlayer.Width / 2);
+
+            // Insertando y configurando imagen de pelota
+            ball = new PictureBox();
+            ball.Width = ball.Height = 20;
+            ball.BackgroundImage = Image.FromFile("../../../Sprites/Ball.png");
+            ball.BackgroundImageLayout = ImageLayout.Stretch;
+
+            ball.Top = pbPlayer.Top - ball.Height;
+            ball.Left = pbPlayer.Left + (pbPlayer.Width / 2) - (ball.Width / 2);
+
+            Controls.Add(ball);
+
+            LoadTiles();
         }
 
         private void frmJuego_FormClosing(object sender, FormClosingEventArgs e)
@@ -62,18 +100,18 @@ namespace proyectoFinal_POO
                 switch (e.KeyCode)
                 {
                     case Keys.Left:
-                        if(pictureBox1.Left > 0)
+                        if(pbPlayer.Left > 0)
                         {
-                            pictureBox1.Left -= increment;
-                            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                            pbPlayer.Left -= increment;
+                            ball.Left = pbPlayer.Left + (pbPlayer.Width / 2) - (ball.Width / 2);
                         }                        
                         break;
                         
                     case Keys.Right:
-                        if(pictureBox1.Right < (Width - 20))
+                        if(pbPlayer.Right < (Width - 20))
                         {
-                            pictureBox1.Left += increment;
-                            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+                            pbPlayer.Left += increment;
+                            ball.Left = pbPlayer.Left + (pbPlayer.Width / 2) - (ball.Width / 2);
                         }                            
                         break;
                     case Keys.Space:
@@ -87,49 +125,25 @@ namespace proyectoFinal_POO
                 switch (e.KeyCode)
                 {
                     case Keys.Left:
-                        if (pictureBox1.Left > 0)
+                        if (pbPlayer.Left > 0)
                         {
-                            pictureBox1.Left -= increment;;
+                            pbPlayer.Left -= increment;;
                         }
                         break;
 
                     case Keys.Right:
-                        if (pictureBox1.Right < (Width - 20))
+                        if (pbPlayer.Right < (Width - 20))
                         {
-                            pictureBox1.Left += increment;               
+                            pbPlayer.Left += increment;               
                         }
                         break;
                 }
             }
         }
 
-        private void frmJuego_Load(object sender, EventArgs e)
-        {
-            PanelPuntajes();
-
-            // Insertando y configurando imagen de plataforma
-            pictureBox1.BackgroundImage = Image.FromFile("../../../Sprites/Player.png");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-
-            pictureBox1.Top = Height - pictureBox1.Height - 80;
-            pictureBox1.Left = (Width / 2) - (pictureBox1.Width / 2);
-
-            // Insertando y configurando imagen de pelota
-            ball = new PictureBox();
-            ball.Width = ball.Height = 20;
-            ball.BackgroundImage = Image.FromFile("../../../Sprites/Ball.png");
-            ball.BackgroundImageLayout = ImageLayout.Stretch;
-
-            ball.Top = pictureBox1.Top - ball.Height;
-            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
-
-            Controls.Add(ball);
-
-            LoadTiles();
-        }
-
         private void LoadTiles()
         {
+            //Variables auxiliares para el calculo de tamaño de cada cpb
             int xAxis = 10, yAxis = 6;
 
             int pbHeight = (int)(Height * 0.3) / yAxis;
@@ -137,7 +151,7 @@ namespace proyectoFinal_POO
 
             cpb = new CustomPB[yAxis, xAxis];
 
-
+            //Rutina de instanciacion y agregacion al form
             for (int i = 0; i < yAxis ; i++)
             {
                 for (int j = 0; j < xAxis; j++)
@@ -149,25 +163,47 @@ namespace proyectoFinal_POO
                     else
                         cpb[i, j].golpes = 1;
 
+                    //Seteando el tamaño
                     cpb[i, j].Height = pbHeight;
                     cpb[i, j].Width = pbWidth;
+
+                    //Posicion de left y top
                     cpb[i, j].Left = j * pbWidth;
-                    cpb[i, j].Top = i * pbHeight + scores.Height + 1; 
+                    cpb[i, j].Top = i * pbHeight + scoresPanel.Height + 1;
+
+                    //Agregando imagen de bloque segun fila
                     if (i == 5)
+                    {
                         cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - green.png");
-                    if (i == 4)
+                        cpb[i, j].Tag = "titleTag";
+                    }
+                    if (i == 4) 
+                    { 
                         cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - pink.png");
+                        cpb[i, j].Tag = "titleTag";
+                    }
                     if (i == 3)
+                    {
                         cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - mint.png");
+                        cpb[i, j].Tag = "titleTag";
+                    }
                     if (i == 2)
+                    {
                         cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - yellow.png");
+                        cpb[i, j].Tag = "titleTag";
+                    }
                     if (i == 1)
+                    {
                         cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - red.png");
+                        cpb[i, j].Tag = "titleTag";
+                    }
                     if (i == 0)
+                    {
                         cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - blinded.png");
+                        cpb[i, j].Tag = "blinded";
+                    }
 
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
-                    cpb[i, j].Tag = "titleTag";
                     Controls.Add(cpb[i, j]);
                 }
             }
@@ -182,39 +218,50 @@ namespace proyectoFinal_POO
             MovimientoPelota?.Invoke();
         }
 
-        private void rebotarPelota()
+        private void BounceBall()
         {
-            if (ball.Top < 0)
-                DatosJuego.dirX = -DatosJuego.dirY;
+            //Rebote de pelota en la parte superior 
+            if (ball.Top < scoresPanel.Height)
+            {
+                DatosJuego.dirY = -DatosJuego.dirY;
+                return;
+            }
 
+            //Pelota se sale de los bounds
             if (ball.Bottom > Height)
             {
                 DatosJuego.vidas--;
                 DatosJuego.juegoIniciado = false;
                 timer1.Stop();
-                reposicionarElementos();
-                actualizarElementos();
+
+                RepositionElements();
+                UpdateElements();
+
                 if(DatosJuego.vidas == 0)
                 {
                     timer1.Stop();
-                    Application.Exit();
+                    MessageBox.Show("Has perdido", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Hide();
+                    FinishGame?.Invoke();
+
                 }
                                 
             }               
                 
-
+            //Rebote de pelota en lado derecho o izquierdo de la ventana
             if (ball.Left < 0 || ball.Right > Width)
             {
                 DatosJuego.dirX = -DatosJuego.dirX;
                 return;
             }
 
-            if (ball.Bounds.IntersectsWith(pictureBox1.Bounds) || ball.Top < 0)
+            if (ball.Bounds.IntersectsWith(pbPlayer.Bounds))
             {
                 DatosJuego.dirY = -DatosJuego.dirY;
                 return;
             }
 
+            //Rutina de colisiones con cpb
             for(int i = 5; i >= 0; i--)
             {
                 for(int j = 0; j < 10; j++)
@@ -231,69 +278,86 @@ namespace proyectoFinal_POO
                             cpb[i, j] = null;
 
                         }
+                        else if(cpb[i, j].Tag.Equals("blinded"))
+                            cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/broken.png");
 
                         DatosJuego.dirY = -DatosJuego.dirY;
-                        puntaje.Text = DatosJuego.puntaje.ToString();
+
+                        score.Text = DatosJuego.puntaje.ToString();
                         return;
                     }                                 
                 }
             }
         }
 
-        private void MoverPelota()
+        private void MoveBall()
         {
             ball.Left += DatosJuego.dirX;
             ball.Top += DatosJuego.dirY;
         }
 
-        private void PanelPuntajes()
+        private void ScoresPanel()
         {
-            scores = new Panel();
-            scores.Width = Width;
-            scores.Height = (int)(Height * 0.06);
-            scores.Top = scores.Left = 0;
-            scores.BackColor = Color.Black;
+            //Instanciar panel de puntajes
+            scoresPanel = new Panel();
 
-            vidasRestantes = new Label();
-            puntaje = new Label();
-            vidasRestantes.ForeColor = puntaje.ForeColor = Color.White;
-            vidasRestantes.Text = "X" + DatosJuego.vidas.ToString();
-            puntaje.Text = DatosJuego.puntaje.ToString();
+            //Seteando elementos del panel puntajes
+            scoresPanel.Width = Width;
+            scoresPanel.Height = (int)(Height * 0.06);
 
-            vidasRestantes.Font = puntaje.Font = new Font("Zorque", 25F);
-            vidasRestantes.TextAlign = puntaje.TextAlign = ContentAlignment.MiddleCenter;
+            scoresPanel.Top = scoresPanel.Left = 0;
+
+            scoresPanel.BackColor = Color.Black;
+
+            //Instanciar label de vidas restantes
+            remainingLifes = new Label();
+            score = new Label();
+
+            //Seteando elementos de label vidas restantes
+            remainingLifes.ForeColor = score.ForeColor = Color.White;
+
+            remainingLifes.Text = "X" + DatosJuego.vidas.ToString();
+            score.Text = DatosJuego.puntaje.ToString();
+
+            remainingLifes.Font = score.Font = new Font("Zorque", 25F);
+            remainingLifes.TextAlign = score.TextAlign = ContentAlignment.MiddleCenter;
 
             
-            puntaje.Left = Width - 100;
+            score.Left = Width - 100;
 
-            vidasRestantes.Height = puntaje.Height = scores.Height;
+            remainingLifes.Height = score.Height = scoresPanel.Height;
             
+            //Instanciar picture box de vidas
+            heart = new PictureBox();
 
-            corazon = new PictureBox();
-            corazon.Height = corazon.Width = scores.Height;
-            corazon.Top = 0;
-            corazon.Left = 20;
-            corazon.BackgroundImage = Image.FromFile("../../../Sprites/Heart.png");
-            corazon.BackgroundImageLayout = ImageLayout.Stretch;
+            heart.Height = heart.Width = scoresPanel.Height;
 
-            vidasRestantes.Left = corazon.Right-10;
+            heart.Top = 0;
+            heart.Left = 20;
 
-            scores.Controls.Add(corazon);
-            scores.Controls.Add(vidasRestantes);
-            scores.Controls.Add(puntaje);
-            Controls.Add(scores);
+            heart.BackgroundImage = Image.FromFile("../../../Sprites/Heart.png");
+            heart.BackgroundImageLayout = ImageLayout.Stretch;
+
+            remainingLifes.Left = heart.Right-10;
+
+            scoresPanel.Controls.Add(heart);
+            scoresPanel.Controls.Add(remainingLifes);
+            scoresPanel.Controls.Add(score);
+            Controls.Add(scoresPanel);
         }
 
-        private void reposicionarElementos()
+        //Reposicionamiento de elementos luego de perder una vida
+        private void RepositionElements()
         {
-            pictureBox1.Left = (Width / 2) - (pictureBox1.Width / 2);
-            ball.Top = pictureBox1.Top - ball.Height;
-            ball.Left = pictureBox1.Left + (pictureBox1.Width / 2) - (ball.Width / 2);
+            pbPlayer.Left = (Width / 2) - (pbPlayer.Width / 2);
+            ball.Top = pbPlayer.Top - ball.Height;
+            ball.Left = pbPlayer.Left + (pbPlayer.Width / 2) - (ball.Width / 2);
         }
 
-        private void actualizarElementos()
+        //Actualizacion de elementos luego de perder una vida
+        private void UpdateElements()
         {
-            vidasRestantes.Text = "X" + DatosJuego.vidas.ToString();
+            remainingLifes.Text = "X" + DatosJuego.vidas.ToString();
 
         }
     }

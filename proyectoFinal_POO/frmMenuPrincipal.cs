@@ -19,6 +19,17 @@ namespace proyectoFinal_POO
             B = new ucJugadorNombre();
         }
 
+        //Metodo que arregla flickering issue
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
             A.Dock = DockStyle.Fill;
@@ -28,6 +39,9 @@ namespace proyectoFinal_POO
             B.Dock = DockStyle.Fill;
             B.Width = Width;
             B.Height = Height;
+
+            Controls.Add(B);
+            B.Hide();
 
             Controls.Add(A);
             A.Hide();
@@ -45,7 +59,19 @@ namespace proyectoFinal_POO
         private void btnJugar_Click(object sender, EventArgs e)
         {
             tableLayoutPanel1.Hide();
-            Controls.Add(B);
+            B.Show();
+
+            B.StartAction = () =>
+            {
+                this.Hide();
+            };
+
+            B.FinishAction = () =>
+            {
+                B.Hide();
+                tableLayoutPanel1.Show();
+                this.Show(); 
+            };
         }
 
         private void btnPuntajes_Click(object sender, EventArgs e)

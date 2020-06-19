@@ -6,6 +6,9 @@ namespace proyectoFinal_POO
 {
     public partial class ucJugadorNombre : UserControl
     {
+        public delegate void GameActions();
+        public GameActions StartAction;
+        public GameActions FinishAction;
 
         public ucJugadorNombre()
         {
@@ -14,6 +17,9 @@ namespace proyectoFinal_POO
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
+            DatosJuego.InicializaJuego();
+            frmJuego Game = new frmJuego();
+
             if (txbUsuario.Text.Length > 0)
             {
                 Boolean esta = false;
@@ -22,7 +28,7 @@ namespace proyectoFinal_POO
 
                 foreach (Jugador j in lista)
                 {
-                    if (j.usuario.Equals(nombre, StringComparison.InvariantCultureIgnoreCase))
+                    if (j.usuario.Equals(nombre))
                     {
                         esta = true;
                     }
@@ -30,17 +36,30 @@ namespace proyectoFinal_POO
 
                 if (esta)
                 {
-                    frmJuego juego = new frmJuego();
-                    juego.Show();
-                    this.Hide(); 
+                    MessageBox.Show($"Bienvenido nuevamente {nombre}", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Game.Show();
+                    StartAction?.Invoke();
+
+                    Game.FinishGame = () =>
+                    {
+                        FinishAction?.Invoke();
+                        Game.Dispose();
+                    };
                 }
                 else
                 {
+                    MessageBox.Show($"Gracias por registrate {nombre}", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     JugadorDAO.crearNuevo(txbUsuario.Text);
-                    frmJuego juego = new frmJuego();
-                    juego.Show();
-                    this.Hide();
+                    Game.Show();
+                    StartAction?.Invoke();
+
+                    Game.FinishGame = () =>
+                    {
+                        FinishAction?.Invoke();
+                        Game.Dispose();
+                    };
                 }
+                txbUsuario.Clear();
             }
             else
             {
