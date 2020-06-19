@@ -77,6 +77,7 @@ namespace proyectoFinal_POO
         private void btnPuntajes_Click(object sender, EventArgs e)
         {
             tableLayoutPanel1.Hide();
+            A.ucTopJugadores_Load(sender, e);
             A.Show();
         }
 

@@ -30,5 +30,15 @@ namespace proyectoFinal_POO
 
             return lista;
         }
+
+        public static void createScore(string User, int Score)
+        {
+            string sql = String.Format(
+                "insert into puntaje(usuario, puntaje) " +
+                "values('{0}', {1});",
+                User, Score);
+
+            ConexionBD.realizarAccion(sql);
+        }
     }
 }

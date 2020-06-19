@@ -13,7 +13,7 @@ namespace proyectoFinal_POO
             InitializeComponent();
         }
 
-        private void ucTopJugadores_Load(object sender, EventArgs e)
+        public void ucTopJugadores_Load(object sender, EventArgs e)
         {
             string lista = "";
             string listaScore = "";

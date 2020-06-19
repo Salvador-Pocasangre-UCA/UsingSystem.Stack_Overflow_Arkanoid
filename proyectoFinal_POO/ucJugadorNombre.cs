@@ -18,7 +18,6 @@ namespace proyectoFinal_POO
         private void btnJugar_Click(object sender, EventArgs e)
         {
             DatosJuego.InicializaJuego();
-            frmJuego Game = new frmJuego();
 
             if (txbUsuario.Text.Length > 0)
             {
@@ -37,6 +36,7 @@ namespace proyectoFinal_POO
                 if (esta)
                 {
                     MessageBox.Show($"Bienvenido nuevamente {nombre}", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmJuego Game = new frmJuego(nombre);
                     Game.Show();
                     StartAction?.Invoke();
 
@@ -50,6 +50,7 @@ namespace proyectoFinal_POO
                 {
                     MessageBox.Show($"Gracias por registrate {nombre}", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     JugadorDAO.crearNuevo(txbUsuario.Text);
+                    frmJuego Game = new frmJuego(nombre);
                     Game.Show();
                     StartAction?.Invoke();
 

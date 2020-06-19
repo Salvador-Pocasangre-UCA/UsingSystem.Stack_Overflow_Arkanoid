@@ -16,16 +16,19 @@ namespace proyectoFinal_POO
         private PictureBox heart;
 
         private int increment;
+        private int remainingPB = 0;
 
         private delegate void AccionesPelota();
         private readonly AccionesPelota MovimientoPelota;
         public Action FinishGame;
 
+        private string Pplayer;
 
 
-        public frmJuego()
+        public frmJuego(string player)
         {
             InitializeComponent();
+            Pplayer = player;
             WindowState = FormWindowState.Maximized;
             Height = Screen.PrimaryScreen.Bounds.Height;
             Width = Screen.PrimaryScreen.Bounds.Width;
@@ -146,6 +149,9 @@ namespace proyectoFinal_POO
             //Variables auxiliares para el calculo de tamaño de cada cpb
             int xAxis = 10, yAxis = 6;
 
+            remainingPB = xAxis *yAxis;
+
+
             int pbHeight = (int)(Height * 0.3) / yAxis;
             int pbWidth = (int) (Width - (xAxis-5)) / xAxis;
 
@@ -240,7 +246,7 @@ namespace proyectoFinal_POO
                 if(DatosJuego.vidas == 0)
                 {
                     timer1.Stop();
-                    MessageBox.Show("Has perdido", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Has perdido!", "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Hide();
                     FinishGame?.Invoke();
 
@@ -277,6 +283,7 @@ namespace proyectoFinal_POO
                             Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
 
+                            remainingPB--;
                         }
                         else if(cpb[i, j].Tag.Equals("blinded"))
                             cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/broken.png");
@@ -284,6 +291,16 @@ namespace proyectoFinal_POO
                         DatosJuego.dirY = -DatosJuego.dirY;
 
                         score.Text = DatosJuego.puntaje.ToString();
+
+                        if(remainingPB == 0)
+                        {
+                            timer1.Stop();
+                            ScoreDAO.createScore(Pplayer, DatosJuego.puntaje);
+                            MessageBox.Show("Has ganado \n Tu puntaje final fue: " + DatosJuego.puntaje);
+                            this.Hide();
+                            FinishGame.Invoke();
+                        }
+
                         return;
                     }                                 
                 }
