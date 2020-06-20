@@ -139,7 +139,7 @@ namespace proyectoFinal_POO
             }
             catch (WrongKeyPressedException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"ArkaNoid",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -204,37 +204,6 @@ namespace proyectoFinal_POO
                             break;
                     }
 
-                    /*if (i == 5)
-                    {
-                        cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - green.png");
-                        cpb[i, j].Tag = "titleTag";
-                    }
-                    if (i == 4) 
-                    { 
-                        cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - pink.png");
-                        cpb[i, j].Tag = "titleTag";
-                    }
-                    if (i == 3)
-                    {
-                        cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - mint.png");
-                        cpb[i, j].Tag = "titleTag";
-                    }
-                    if (i == 2)
-                    {
-                        cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - yellow.png");
-                        cpb[i, j].Tag = "titleTag";
-                    }
-                    if (i == 1)
-                    {
-                        cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - red.png");
-                        cpb[i, j].Tag = "titleTag";
-                    }
-                    if (i == 0)
-                    {
-                        cpb[i, j].BackgroundImage = Image.FromFile("../../../Sprites/Tile - blinded.png");
-                        cpb[i, j].Tag = "blinded";
-                    }*/
-
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch;
                     Controls.Add(cpb[i, j]);
                 }
@@ -269,7 +238,7 @@ namespace proyectoFinal_POO
                 catch(NoRemainingLivesException ex2)
                 {
                     timer1.Stop();
-                    MessageBox.Show(ex2.Message);
+                    MessageBox.Show(ex2.Message,"ArkaNoid",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                     this.Hide();
                     FinishGame?.Invoke();
                 }               
@@ -334,7 +303,7 @@ namespace proyectoFinal_POO
                             ScoreController.CreateScore(Pplayer, GameData.score);
                             MessageBox.Show("Has ganado \n Tu puntaje final fue: " + GameData.score);
                             this.Hide();
-                            FinishGame.Invoke();
+                            FinishGame?.Invoke();
                         }
                         return;
                     }                                 

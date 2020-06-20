@@ -78,11 +78,11 @@ namespace proyectoFinal_POO
             }
             catch(EmptyNicknameException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"ArkaNoid",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             catch (ExceededMaxCharacterException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"ArkaNoid",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }            
         }
     }

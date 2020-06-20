@@ -90,17 +90,17 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controlador\GameData.cs" />
-    <Compile Include="Vista\frmJuego.cs">
+    <Compile Include="Vista\frmGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\frmJuego.Designer.cs">
-      <DependentUpon>frmJuego.cs</DependentUpon>
+    <Compile Include="Vista\frmGame.Designer.cs">
+      <DependentUpon>frmGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\frmMenuPrincipal.cs">
+    <Compile Include="Vista\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\frmMenuPrincipal.Designer.cs">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    <Compile Include="Vista\frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Player.cs" />
     <Compile Include="Controlador\PlayerController.cs" />
@@ -113,23 +113,23 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ucJugadorNombre.cs">
+    <Compile Include="Vista\ucPlayersName.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Vista\ucJugadorNombre.Designer.cs">
-      <DependentUpon>ucJugadorNombre.cs</DependentUpon>
+    <Compile Include="Vista\ucPlayersName.Designer.cs">
+      <DependentUpon>ucPlayersName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ucTopJugadores.cs">
+    <Compile Include="Vista\ucTopPlayers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Vista\ucTopJugadores.Designer.cs">
-      <DependentUpon>ucTopJugadores.cs</DependentUpon>
+    <Compile Include="Vista\ucTopPlayers.Designer.cs">
+      <DependentUpon>ucTopPlayers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista\frmJuego.resx">
-      <DependentUpon>frmJuego.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmGame.resx">
+      <DependentUpon>frmGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\frmMenuPrincipal.resx">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,11 +141,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Vista\ucJugadorNombre.resx">
-      <DependentUpon>ucJugadorNombre.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\ucPlayersName.resx">
+      <DependentUpon>ucPlayersName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\ucTopJugadores.resx">
-      <DependentUpon>ucTopJugadores.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\ucTopPlayers.resx">
+      <DependentUpon>ucTopPlayers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
