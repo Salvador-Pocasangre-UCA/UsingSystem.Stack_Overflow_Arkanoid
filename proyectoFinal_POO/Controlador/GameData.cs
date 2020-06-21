@@ -11,7 +11,7 @@
             gameStarted = false;
             lives = 3;
             score = 0;
-
+            ticksCount = 0;
         }
 
     }

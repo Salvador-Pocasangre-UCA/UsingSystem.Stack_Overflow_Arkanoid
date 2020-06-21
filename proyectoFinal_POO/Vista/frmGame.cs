@@ -301,7 +301,7 @@ namespace proyectoFinal_POO
                         {
                             timer1.Stop();
                             ScoreController.CreateScore(Pplayer, GameData.score);
-                            MessageBox.Show("Has ganado \n Tu puntaje final fue: " + GameData.score);
+                            MessageBox.Show("Has ganado \n Tu puntaje final fue: " + GameData.score, "ArkaNoid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
                             FinishGame?.Invoke();
                         }

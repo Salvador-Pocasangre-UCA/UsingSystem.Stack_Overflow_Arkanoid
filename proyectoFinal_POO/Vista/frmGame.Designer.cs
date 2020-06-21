@@ -49,10 +49,10 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 40;
+            this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // frmJuego
+            // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -62,7 +62,7 @@
             this.Controls.Add(this.pbPlayer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmJuego";
+            this.Name = "FrmGame";
             this.Text = "ArkaNoid";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGame_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGame_FormClosed);
