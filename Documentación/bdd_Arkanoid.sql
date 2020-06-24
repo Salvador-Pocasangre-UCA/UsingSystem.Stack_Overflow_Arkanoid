@@ -1,0 +1,15 @@
+CREATE TABLE JUGADOR(
+	usuario varchar(25),
+	CONSTRAINT pk_jugador PRIMARY KEY (usuario)
+);
+
+CREATE TABLE PUNTAJE(
+	id_puntaje SERIAL PRIMARY KEY,
+	usuario VARCHAR(25),
+	puntaje INT,
+	CONSTRAINT fk_puntaje_jugador
+	FOREIGN KEY (usuario) REFERENCES JUGADOR(usuario)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+SELECT * FROM JUGADOR
